@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <style>
+        body{
+            background-color:orange ;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="/movieadmin/addMovie">Add Movie</a>
+   
+    
+    <ul>
+        <h1>Movies</h1>
+        <%movies.forEach(content => {%>
+            <li>
+                <a href="movies/<%=content._id%>"><p><%=content.title%></p></a>
+                <a class="del" data-doc="<%=content._id%>">delete</a>
+                <a href="movieadmin/update">Update</a>
+            </li>
+            
+        <% }) %>
+    </ul>
+
+
+    
+        
+
+   
+    <script>
+         const del = document.querySelectorAll('a.del')
+         const delLinks = [].slice.call(del)
+ 
+        delLinks.forEach((item, i) => {
+	        item.addEventListener('click' , (e) => {
+		        var result = confirm("?");
+		        if (result) {
+		 	        const endpoint = `/movieadmin/delete/${item.dataset.doc}`
+			        fetch(endpoint, {
+				    method: 'DELETE'
+			    })
+		
+		       .then((response) => response.json()
+		       .then((data) => window.location.href = data.link))
+		       .catch((err) => {
+			    console.log(err)
+		})}
+	})
+ })
+
+        
+        
+    
+       
+        
+            
+
+        
+    </script>
+</body>
+</html>

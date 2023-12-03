@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <style>
+        input{
+            width: 300px;
+            height: 20px;
+        }
+        #button{
+            width: 100px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="/movieadmin/update" method="post">
+        <h1>Movie</h1>
+        <input type="text" name="bg" placeholder="link" required><br><br>
+        <input type="text" name="title" placeholder="Title" required><br><br>
+        <input type="text" name="short1" placeholder="s1" required><br><br>
+        <input type="text" name="short2" placeholder="s2" required><br><br>
+        <input type="text" name="short3" placeholder="s3" required><br><br>
+        <textarea name="exp"  id="" cols="30" rows="10"placeholder="Explanation" required></textarea>
+      
+        <input type="submit" value="Save" id="button">
+    </form><br>
+
+    <a href="/">main</a>
+  
+</body>
+</html>

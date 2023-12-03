@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <style>
+        input{
+            width: 300px;
+            height: 20px;
+        }
+        #button{
+            width: 100px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="/TVadmin/addTV" method="post">
+        <h1>TV</h1>
+        <input type="text" name="embed" placeholder="videolink(embed)" required><br><br>
+        <input type="text" name="bg" placeholder="link" id="back" required><br><br>
+        <input type="text" name="title" placeholder="Title" required><br><br>
+        <input type="text" name="short1" placeholder="Category" required><br><br>
+        <input type="text" name="short2" placeholder="Stars" required><br><br>
+        <input type="text" name="short3" placeholder="IMDb" required><br><br>
+        <textarea name="exp" id="" cols="30" rows="10"placeholder="Explanation" required></textarea>
+      
+        <input type="submit" value="Save" id="button">
+    </form><br>
+
+    <a href="/">main</a>
+
+</body>
+</html>

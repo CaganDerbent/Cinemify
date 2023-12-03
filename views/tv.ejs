@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinemify</title>
+    <link rel="icon" type="image/x-icon" href="logo_transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+* {
+            margin: 0;
+            padding: 0;
+            font-family: 'Titillium Web', sans-serif;          
+            
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        body {
+            background-color: rgb(42, 42, 54); 
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(28, 28, 43);
+            padding-right: 50px;
+            box-shadow: 0 8px 6px -6px black;
+            z-index: 1;
+
+        }
+        #search {
+            height: 20px;
+            width: 80%;
+            
+        }
+        #searchbar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 32%;
+        }
+        header .logo {
+            position: relative;
+            font-size: 2em;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 0.2%;
+            padding-left: 2%;
+            padding-right: 0.2%;
+            color: whitesmoke;
+            margin-right: 1%;
+        }
+        header input {
+            padding: 10px;
+            width: 33%;
+            height: 40px;
+            outline: 0;
+            background-color: rgb(42, 42, 54);
+            border: none;
+            font-size: 1.2em;
+            color: whitesmoke;
+
+        }
+        header input:focus {
+            outline: 0;
+        }
+        header ul {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            right: 6.5%;
+        
+        }
+        header ul li {
+            position: relative;
+            display: block;
+            margin-top: 0px;
+            margin-left: 4vw;
+            font-size: 1.2rem;
+            transition: 0.4s;
+        }
+        header ul li a {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: block;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+        }
+        header ul li a:hover {
+            cursor: pointer;
+            color: rgb(28, 28, 43);
+            background-color: whitesmoke;
+        }
+        #button {
+            position: absolute;
+            right: 9%;
+            width: 10%;
+            height: 40px;
+            background-color: rgb(42, 42, 54);
+            border: none;
+            outline: none;
+        }
+        #button:hover {
+            cursor: pointer;
+        }
+@media only screen and (max-width: 600px) {
+  .html{
+    font-size: 12px;
+  }
+  header ul li {
+    font-size: 14px;
+    right: 10%;
+    margin-left: 9vw;
+  }
+  #searchbar {
+    visibility: hidden;
+  }
+}
+
+        section {
+            position: relative;
+            padding-top: 20px;
+            display: flex;
+            width: 100%;
+            min-height: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        #tv{
+            color: rgb(28, 28, 43);
+            background-color: whitesmoke;
+        }
+
+        .link {
+            width: 475px;
+            height: 290px;
+            margin: 30px;
+            text-decoration: none;
+            transition: 0.4s;
+
+        }
+        .link:hover {
+            filter: brightness(80%);
+        }
+        .template{
+            color: whitesmoke;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 1.6em;
+        }
+        #x{
+            margin-top: 25px;
+        }
+        #movie {
+            color: rgb(28, 28, 43);
+            background-color: whitesmoke;
+        }
+        .name {
+            box-sizing: border-box;
+            padding-left: 10px;
+            display: flex;
+            justify-content: baseline;
+            align-items: center;
+            background-color: rgb(28, 28, 43);
+            width: 100%;
+            height: 40px;
+            font-size: 1.5em;
+        }
+        .photo {
+            width: 100%;
+            height: 250px;
+        }
+        
+
+@media only screen and (min-width:1606px) and (max-width: 1921px) {
+    .link:hover {
+            margin-top: 15px;
+            filter: brightness(80%);
+        }
+    
+   
+    
+}
+
+
+       
+ 
+@media only screen and (max-width: 600px) {
+  .html{
+    font-size: 12px;
+  }
+  header ul li {
+    font-size: 14px;
+    right: 10%;
+    margin-left: 9vw;
+  }
+  #searchbar {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #searchbar{
+    visibility: hidden;
+  }
+  .link {
+        width: 325px;
+        height: 170px;
+        margin: 40px;
+        text-decoration: none;
+        transition: 0.4s;
+
+ 
+}
+.photo {
+            width: 100%;
+            height: 170px;
+        }
+}
+@media only screen and (max-width:600px){
+    ul li a {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  ul li {
+    margin: 0;
+    padding: 0;
+  }
+  header .logo {
+    font-size: 18px;
+  }
+}
+  
+      
+   
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><i>cinemify</i></a>
+        
+        
+        <ul>
+            <li><a href="/tvs" id="tv">TV Series</a></li>
+            <li><a href="/movies">Movies</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <div class="profile">
+            
+        </div>
+    </header>
+    <div class="template"><h1>Welcome <%=user.username%> !</h1></div>
+    <div class="template"id="x"><h1>Discover TV Series with <i>cinemify</i></h1></div>
+    
+    <section>
+
+        <%tv.forEach(content => {%>
+
+            <a href="/tvs/<%=content._id%>"class="link">
+                <div class="name"><%=content.title%></div>
+                <div class="photo" style="background-image: url('<%= content.bg %>');background-size: cover;" id="bir"></div>
+            </a>
+
+        <% }) %>
+
+
+
+        
+        
+    </section>
+    <script src="searchscript.js"></script>
+    
+</body>
+</html>

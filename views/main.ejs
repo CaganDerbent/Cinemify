@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="keywords" content="cinemify,cinemify.com.tr">
+    <meta name ="description" content="Discover TV series and movie trailers with cinemify.">
+    <meta name="google-site-verification" content="v1YjjvXOQqqWiPBjpe6sANuKQLeVFD9h63qHcTMBtkk" />
+    <title>cinemify</title>
+    <link rel="icon" type="image/x-icon" href="logo_transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Open+Sans:wght@300;400&family=Rubik:wght@300&family=Titillium+Web:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translateX(-200%);
+    }
+    30%{
+        transform: translateX(-300%);
+    }
+    40%{
+        transform: translateX(-400%);
+    }
+    50%{
+        transform: translateX(-500%);
+    }
+    60%{
+        transform: translateX(-600%);
+    }
+    70%{
+        transform: translateX(-700%);
+    }
+    100%{
+        transform: translateX(-700%);
+    }
+}        
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        body {
+            background-color: rgb(42, 42, 54); 
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            padding-right: 50px;
+            box-shadow: 0 8px 6px -6px black;
+            z-index: 1;
+            backdrop-filter: blur(15px);
+
+        }
+        header .logo {
+            position: relative;
+            font-size: 2em;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 0.2%;
+            padding-left: 2%;
+            padding-right: 0.2%;
+            color: whitesmoke;
+            margin-right: 1%;
+        }
+        header input {
+            padding: 10px;
+            width: 33%;
+            height: 40px;
+            outline: 0;
+            background-color: rgb(42, 42, 54);
+            border: none;
+            font-size: 1.2em;
+            color: whitesmoke;
+
+        }
+        header input:focus {
+            outline: 0;
+        }
+        header ul {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            right: 4%;
+        
+        }
+        header ul li {
+            position: relative;
+            display: block;
+            margin-top: 0px;
+            margin-left: 4vw;
+            font-size: 1.2rem;
+            transition: 0.4s;
+        }
+        header ul li a {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: block;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+        }
+        header ul li a:hover {
+            cursor: pointer;
+            color: rgb(28, 28, 43);
+            background-color: whitesmoke;
+        }
+        
+    
+        
+        section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 80px;
+            width: 100%;
+            min-height: 100%;
+            color: whitesmoke;
+        }
+        #main {
+            color: whitesmoke;
+            background-color: whitesmoke;
+        }
+    
+
+        #search {
+            height: 20px;
+            width: 80%;
+            
+        }
+        #searchbar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 32%;
+        }
+        #button {
+            position: absolute;
+            right: 9%;
+            width: 10%;
+            height: 40px;
+            background-color: rgb(42, 42, 54);
+            border: none;
+            outline: none;
+        }
+        #button:hover {
+            cursor: pointer;
+        }
+
+        .div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            width: 100%;
+            height: 600px;
+        }
+        #one {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+        }
+        .container {
+            border: 4px solid whitesmoke;
+            border-radius: 5px;
+            position:relative;
+            left: 25%;
+            top: 45%;
+            width: 48%;
+            height: 80%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+         
+            
+        }
+        .slideshow{
+            border-collapse: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            animation: slide 36s infinite;
+            
+
+        }
+        img{
+            border-collapse: none;
+            width: 100%;
+        }
+       
+        #two {
+            flex-direction: row;
+            position: relative;
+            background-color: rgb(42, 42, 54)
+        }
+        p{
+            font-size: 3vw;
+        }
+  
+        #img2{
+            position: absolute;
+            width: 12.5%;
+            height: 60%;
+            left: 50%;
+            top: 30%;
+        }
+        #img3{
+            position: absolute;
+            width: 33%;
+            height: 66%;
+            left: 65%;
+            top: 30%;
+        }
+        h1{
+            position: absolute;
+            font-size: 3vw;
+            left: 7%;
+            top: 30%;
+        }
+        #p{
+            position: absolute;
+            font-size: 2vw;
+            left: 7%;
+            top: 50%;
+        }
+      
+      
+   
+      
+     
+    
+    
+    
+       
+
+
+        
+@media only screen and (max-width: 600px) {
+  .html{
+    font-size: 48px;
+  }
+  header ul{
+    margin-left: 0;
+  }
+  ul li a {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    
+  }
+  ul li{
+    margin:0;
+    padding: 0;
+  }
+  header .logo{
+    font-size: 18px;
+  }
+
+   
+ 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  #searchbar{
+    visibility: hidden;
+  }
+
+  .container{
+    left: 33%;
+    position: relative;
+    top: 40%;
+    width: 66%;
+    height: 40%;
+  }
+  h1{
+    font-size: 48px;
+  }
+  #p{
+    font-size: 32px;
+  }
+  #temp{
+    color: whitesmoke;
+    position: absolute;
+    top: 100px;
+    font-size: 24px;
+  }
+ 
+  
+  
+}
+@media only screen and (min-width: 600px) and (max-width:1150px){
+    .div{
+        height: 280px;
+    }
+    .container{
+    left: 25%;
+    position: relative;
+    top: 45%;
+    width: 48%;
+    height: 80%;
+  }
+
+}
+
+
+.slide_bg {
+  width: 100%;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  animation: slidebg 20s linear infinite 0s;
+  animation-timing-function: ease-in-out;
+  background-image: url("https://images.alphacoders.com/645/645629.jpg");
+}
+
+/* CSS for screens narrower than or equal to 600px */
+@media only screen and (max-width: 600px) {
+  .slide_bg {
+    background-image: url("https://w0.peakpx.com/wallpaper/997/560/HD-wallpaper-breaking-bad-breaking-bad-jesse-pinkman-walter-white.jpg");
+  }
+  @keyframes slidebg {
+    20% {
+      background-image: url("https://w0.peakpx.com/wallpaper/635/83/HD-wallpaper-rick-and-morty-morty-rick.jpg");
+    }
+    40% {
+      background-image: url("https://w0.peakpx.com/wallpaper/1001/909/HD-wallpaper-joker-sad-joaquin-phoenix-joker-2019-joker-face.jpg");
+    }
+    60% {
+      background-image: url("https://w0.peakpx.com/wallpaper/1011/520/HD-wallpaper-batman-logo.jpg");
+    }
+    100% {
+      background-image: url("https://mfiles.alphacoders.com/887/887930.jpg");
+    }
+    
+  }
+  /* Additional CSS rules for mobile */
+  .html {
+    font-size: 48px;
+  }
+  header ul {
+    margin-left: 0;
+  }
+  ul li a {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  ul li {
+    margin: 0;
+    padding: 0;
+  }
+  header .logo {
+    font-size: 18px;
+  }
+  #temp{
+    font-size: 28px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 601px) {
+    .slide_bg {
+    background-image: url("https://images5.alphacoders.com/636/636560.jpg");
+  }
+  @keyframes slidebg {
+    20% {
+      background-image: url("https://images3.alphacoders.com/112/1120679.jpg");
+    }
+    40% {
+      background-image: url("https://images3.alphacoders.com/129/1292288.jpg");
+    }
+    60% {
+      background-image: url("https://wallpapercave.com/wp/wp2554178.jpg");
+    }
+   
+}
+#temp{
+  position: absolute;
+  color: whitesmoke;
+  margin-top: 0px;
+  top: 100px;
+  left: 21%;
+  text-align: center;
+ 
+}
+
+
+}
+
+
+    
+  
+   
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><i>cinemify</i></a>
+        <ul>
+               <% if(user) { %> 
+                <% if(user.role == "admin") {%>
+                    <li><a href="/admin">Admin</a></li>
+                    <% } else { %>
+                        
+                        <%}%>
+                
+               <% } else { %>
+                <li><a href="/register">Register</a></li>
+               <% } %>
+               <% if(user) { %> 
+                <li><a href="/tvs">TV Series</a></li>
+                <li><a href="/movies">Movies</a></li>
+               <% } else { %>
+               <% } %>
+               <% if(user) { %> 
+                <li><a href="/logout">Logout</a></li>
+               <% } else { %>
+                <li><a href="/login">Login</a></li>
+               <% } %>
+           
+            
+        </ul>
+        
+        </div>
+    </header>
+    <h1 id="temp">Discover Movies and TV Series with <i>cinemify</i></h1>
+    <div class="slide_bg">
+      
+    </div>
+   
+</body>
+</html>
