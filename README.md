@@ -1,2 +1,6 @@
 # Cinemify
-Cinemify is a website you can watch movies or TV shows trailers .
+Cinemify is a website with JWT, where you can watch movie or TV show trailers.
+
+
+
+
