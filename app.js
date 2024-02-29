@@ -2,21 +2,23 @@ const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
 const movie = require("./models/movies")
-const tv = require("../website-node/models/tv")
-const authRoutes = require("../website-node/routers/authRoutes")
-const adminRoutes = require("../website-node/routers/adminRoutes")
-const adminRoutes2 = require("../website-node/routers/adminRoutes2")
-const tvRoutes = require("../website-node/routers/tvRoutes")
-const movieRoutes = require("../website-node/routers/movieRoutes")
-const {requireAuth,checkUser, requireAdmin} = require("../website-node/middlewares/authMiddleware")
+const tv = require("./models/tv");
+const authRoutes = require("./routers/authRoutes")
+const adminRoutes = require("./routers/adminRoutes")
+const adminRoutes2 = require("./routers/adminRoutes2")
+const tvRoutes = require("./routers/tvRoutes")
+const movieRoutes = require("./routers/movieRoutes")
+const {requireAuth,checkUser, requireAdmin} = require("./middlewares/authMiddleware")
 const cookieParser = require("cookie-parser")
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+require('dotenv').config();
 
+const apiKey = process.env.API_KEY;
 
-const dbURL = 'mongodb+srv://cagan:cagan123@cluster0.6gmh81j.mongodb.net/'
+const dbURL = `mongodb+srv://cagan:${apiKey}@cluster0.6gmh81j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 mongoose.connect(dbURL,{useNewUrlParser:true,useUnifiedTopology: true}) // mongoDB servera bağlandı
   .then((result) => {
     console.log("mongoDB Connected")
